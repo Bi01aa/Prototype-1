@@ -7,10 +7,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     private Rigidbody2D body;
     private bool grounded;
+    private Animator anim;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -26,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && grounded)
             Jump();
+
+        anim.SetBool("run", horizontalInput != 0);
     
     }
 
