@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spikes : MonoBehaviour
+public class DeathBarrier : MonoBehaviour
 {
     [SerializeField] private float damage;
 
-    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,6 +15,6 @@ public class Spikes : MonoBehaviour
             collision.GetComponent<Health>().TakeDamage(damage);
         }
 
-       
+
     }
 }
